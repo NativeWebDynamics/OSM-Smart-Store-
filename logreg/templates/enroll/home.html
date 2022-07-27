@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    
+
+
+           
+                    
+    {% endblock %}
+   
+</head>
+<body>
+    
+ <div class="container-fluid1 pt-4 px-4 dark-mode-inner-back">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4 dark-mode-inner2-back">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0 dark-mode-text">Monthly Graph</h6>
+                    
+                </div>
+                
+                <div>
+                    <img src="{% static 'images/graphs/graph2.jpeg' %}" class="Graph-img">
+             </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4 dark-mode-inner2-back">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0 dark-mode-text">City Wise Sales</h6>
+                   
+                </div>
+                <div>
+                    <img src="{% static 'images/citygraph/graphcity.png' %}" class="Graph-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sales Chart End -->
+<div class="container-fluid1 pt-4 px-4 dark-mode-inner-back">
+    <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 dark-mode-inner2-back">
+                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2  dark-mode-text">Monthly Sale</p>
+                    <h6 class="mb-0 dark-mode-text">${{ms}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 dark-mode-inner2-back">
+                <i class="fas fa-cube fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2 dark-mode-text">Hot Product</p>
+                    <h6 class="mb-0 dark-mode-text"> {{ht.Product}} </h6>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-area fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Today Revenue</p>
+                    <h6 class="mb-0">$1234</h6>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Revenue</p>
+                    <h6 class="mb-0">$1234</h6>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- Recent Sales Start -->
+<div class="container-fluid1 pt-4 px-4 dark-mode-inner-back">
+    <div class="bg-light text-center rounded p-4 dark-mode-inner2-back">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0 dark-mode-text">Employee Data</h6>
+            <a href="" class="dark-mode-text">Show All</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <!-- <th scope="col"><input class="form-check-input" type="checkbox"></th> -->
+                        <th scope="col" class="dark-mode-text">Emp-ID</th>
+                        <th scope="col" class="dark-mode-text">joining Date</th>
+                        <th scope="col" class="dark-mode-text">Customer</th>
+                        <th scope="col" class="dark-mode-text">Salary</th>
+                        <th scope="col" class="dark-mode-text">Duty-Time</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for st in stu %}
+                    <tr>
+                        <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                        <td>{{st.id}}</td>
+                        <td>{{st.joining_date}}</td>
+                        <td>{{st.EmpName}}</td>
+                        <td>{{st.Salary}}</td>
+                        <td>{{st.Duty_time}}</td>
+                        <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                    </tr>
+                   
+                </tbody>
+                {%  endfor  %}
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
+
+
+<!-- Widgets Start -->
+<div class="container-fluid1 pt-4 px-4 dark-mode-inner-back">
+    <div class="row g-4">
+        <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100 bg-light rounded p-4 dark-mode-inner2-back dark-mode-text">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h6 class="mb-0  dark-mode-text">Notifications</h6>
+                    
+                </div>
+               
+
+                {% for pd in prod %}
+
+                {% if pd.Quantity <=  lim %}
+               
+  
+
+
+
+
+                
+                <div class="d-flex align-items-center border-bottom py-3">
+                   
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+
+                            <p class="dark-mode-text"> {{pd.Product_name}}  is low in stock Please order it</p>
+                            <i class='fas fa-exclamation-triangle' style='font-size:26px;color:red'></i>
+                            
+                           
+                          
+                        </div>
+                        
+                    </div>
+                   
+                
+                </div>
+
+                {% endif %}
+
+                {%  endfor  %}
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100 bg-light rounded p-4 dark-mode-inner2-back">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0  dark-mode-text">Calender</h6>
+                    <!-- <a href="">Show All</a> -->
+                </div>
+                <div id="calender"></div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100 bg-light rounded p-4 dark-mode-inner2-back " id="todolist" >
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0 dark-mode-text">To Do List</h6>
+                    <!-- <a href="">Show All</a> -->
+                </div>
+                <div class="d-flex mb-2">
+                    <input class="form-control bg-transparent dark-mode-text" type="text" id="todo-input" placeholder="Enter task">
+                    <button type="button" class="btn btn-primary ms-2" id="AddButton">Add</button>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2 manual-list" id="listAdding" >
+                    <input class="form-check-input m-0" type="checkbox" id="checkid">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Short task goes here...</span>
+                            <!-- <button class="btn btn-sm"><i class="fa fa-times"></i></button> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Widgets End -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid1 pt-4 px-4 dark-mode-inner-back">
+    <div class="bg-light rounded-top p-4 dark-mode-inner2-back">
+        <div class="row">
+            <div class="col-12 col-sm-6 text-center text-sm-start">
+                &copy; <a href="#">OSM Store Monitor</a>, All Right Reserved. 
+            </div>
+            <div class="col-12 col-sm-6 text-center text-sm-end">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+{% endblock %}
+</div>
+
+    
+
+
+
+
+
+{% block page_scripts %}
+
+ 
+<script src="{% static 'js/darkgen.js' %}"></script> 
+                    
+{% endblock %}
+    
+</body>
+</html>

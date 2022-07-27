@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+    <link href="{% static 'css/genericDarkmode.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/userSetting.css' %}" rel="stylesheet" type="text/css">
+    <!-- <link href="{% static 'css/manualstyle.css' %}" rel="stylesheet" type="text/css">  -->
+
+    
+
+           
+                    
+    {% endblock %}
+   
+</head>
+<body>
+
+    <div class="container-fluid pt-4 px-4 pb-4 dark-mode-inner-back" >
+        <div class="row bg-light justify-content-center rounded p-4 dark-mode-inner2-back">
+            <div class="col-12 d-flex align-items-center justify-content-between mb-4 ">
+                <h6 class="mb-0 text-center dark-mode-text">User Settings</h6>
+
+
+
+
+
+            </div>
+            <div class="col-sm-12 col-xl-10 user-style-border " id="user-style-border-dark1">
+                <div class="accordion accordion-flush " id="accordionFlushExample">
+                    <div class="accordion-item mb-2 mb-2" style="border-radius:30px;">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Stocks Setting
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+
+                                    <div class="row justify-content-end">
+                                        <div class="col-12">
+                                            <p>Current Threshold is: <code style="font-size: 15px;">{{thrs}}</code>
+                                            </p>
+                                        </div>
+                                        <div class="col-12 ">
+                                            <div class="form-floating mb-2">
+                                                <input type="number" class="form-control " id="threshold-input"
+                                                      name="threshold-input"
+                                                     placeholder="Enter Product Price">
+                                                <label for="floatingInput">Threshold on stocks:</label>
+
+                                            </div>
+
+                                        </div>
+                                        <label id="threshold-error1" class="error-msgs">value should not
+                                            empty</label>
+                                        <label id="threshold-error2" class="error-msgs">value should be
+                                            positive</label>
+                                        <div class="col-12 text-end">
+                                            <button class="btn btn-primary gold-color" type="submit"
+                                                id="user-setting-apply"> Apply</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <ul>
+                                    <li style="color: red;">
+                                        <p class="attention-message"><img src="{% static 'images/attention.png' %}"
+                                                class="img-attention">This Certain Threshold will generate
+                                            notification when stocks reaches the limit</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-2" style="border-radius:30px;">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Theme Setting
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="row justify-content-end">
+
+                                    <div class="col-12 ">
+
+
+                                        <div class="container-switch  ">
+                                            <label>
+                                                Change Theme
+                                            </label>
+
+                                            <div class="switch-toggle " id="switch-button">
+                                                <input type="checkbox" id="toggle-switch-input">
+                                                <label for="toggle-switch-input"></label>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item " style="border-radius:30px;">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                profile Update
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>
+                                    <label>
+                                        UserName: {{user}}
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        Organization Name: {{org}}
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        Phone no. : <code>{{ph}}</code>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        Email: {{em}}
+                                    </label>
+                                </p>
+                                <div class="col-12">
+                                <p class="text-end">
+                                    <a class="btn manualbutton2"  href="{% url 'profup'  %}" id="update-button">Update</a>
+                                   
+                                </p>
+                                       
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    
+
+
+{% endblock content %}
+
+
+{% block page_scripts %}
+ <script src="{% static 'js/userSetting/darky1.js' %}"></script>
+ <script src="{% static 'js/userSetting/userSetting.js' %}"></script>  
+ <!-- <script src="{% static 'js/darkgen.js' %}"></script>  -->
+
+                    
+{% endblock %}
+    
+</body>
+</html>

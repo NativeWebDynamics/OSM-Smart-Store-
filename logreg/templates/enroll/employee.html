@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    {% load static %}
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/emp.css' %}" rel="stylesheet" type="text/css">
+
+           
+                    
+    {% endblock %}
+   
+</head>
+<body>
+
+
+    
+
+ <div class="container-fluid pt-4 px-4 dark-mode-inner-back">
+    
+    
+  
+<div class="bg-light text-center rounded p-4 dark-mode-inner2-back">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h6 class="mb-0 dark-mode-text">Employee Data</h6>
+       
+    </div>
+    <div class="table-responsive dark-mode-table">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <thead>
+                <tr class="text-dark">
+                    <!-- <th scope="col"><input class="form-check-input" type="checkbox"></th> -->
+                    <th scope="col" class="dark-mode-text" >Emp-ID</th>
+                    <th scope="col" class="dark-mode-text">joining Date</th>
+                    <th scope="col" class="dark-mode-text">Emp-Name</th>
+                    <th scope="col" class="dark-mode-text">Salary</th>
+                    <th scope="col" class="dark-mode-text">Duty-Time</th>
+                    <th scope="col" class="dark-mode-text">role</th>
+                    <th scope="col" class="dark-mode-text">password</th>
+                    <th scope="col" class="dark-mode-text">action</th>
+                </tr>
+            </thead>
+            <tbody class="dark-mode-text">
+                {% for st in stu %}
+                <tr>
+                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                    <td>{{st.id}}</td>
+                    <td>{{st.joining_date}}</td>
+                    <td>{{st.EmpName}}</td>
+                    <td>{{st.Salary}}</td>
+                    <td>{{st.Duty_time}}</td>
+                    <td>{{st.Role}}</td>
+                    <td>{{st.Password}}</td>
+                    <td>
+                        <form action="{% url 'deletedata' st.id %}" method="POST" class="d-inline"> {% csrf_token  %}
+
+                           
+                            <input  type="Submit" class="btn manualbutton1" value="Delete">
+                        </form>
+                        <a href="{% url 'empup' st.id %}" class="btn manualbutton2"   id="update-button">Update</a>
+                    </td>
+                    <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                </tr>
+                {%  endfor  %}
+
+                <tr id="sample-fields" class="fields" >
+                   <form method="POST" >
+
+                     {% csrf_token %}
+
+
+                     <td>
+                        <input type="text" value="Auto" size="9" placeholder="EMP-ID"
+                             class="general-input-field" disabled>
+                    </td>
+                    <td>
+                        <input type="date" id="emp-date" name="emp-date" class="general-input-field">
+                    </td>
+                    
+                    <td>
+                        <input type="text" size="9" placeholder="EMP-Name" id="emp-name" name="emp-name" class="general-input-field">
+                    </td>
+                    <td>
+                        <input type="number"  id="num" name="num" placeholder="Salary" class="general-input-field"/>
+                    </td>
+                    <td>
+                        <!-- <input type="text" size="11"> -->
+                        <select name="dutyTime" id="dutyTime"  class="general-input-field">
+                            <option>day</option>
+                            <option>night</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!-- <input type="text" size="11"> -->
+                        <select name="role" id="role" class="general-input-field">
+                            <option>worker</option>
+                            <option>cashier</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="password" size="11" placeholder="password" id="emp-password" name="emp-password" class="general-input-field">
+                    </td>
+                    <td >
+                        <button class="btn Save-btn" type="submit" id="Save-button">Save </button>
+                    </td>
+                </form>
+                </tr>
+            </tbody>
+        </table>
+        <h6 class="missing-value">missing values</h6>
+    </div>
+
+</div>
+
+<button class="Add-button" id="Add-button">Add New</button>
+<button class="close-button2" id="close1-button">close</button>
+
+
+  </div>
+ 
+{% endblock content %}
+
+
+
+ 
+ {% block page_scripts %}
+ <script src="{% static 'js/emp/emplo.js' %}"></script>  
+ <script src="{% static 'js/darkgen.js' %}"></script> 
+           
+                    
+ {% endblock %} 
+</body>
+</html>

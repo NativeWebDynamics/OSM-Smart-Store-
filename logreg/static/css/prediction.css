@@ -1,0 +1,64 @@
+.font-size1{
+    font-size: 14px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dark-LcD{
+    /* border:4px groove darkred; */
+   
+    height: 200px;
+    margin-top: 30px;
+    /* background-image:linear-gradient(to bottom left,rgb(255, 255, 255),gray); */
+    animation-name: turn-off;
+    animation-duration: 10s;
+    /* background-image: linear-gradient(to right,white,wheat); */
+}
+.LcD{
+    border:4px groove goldenrod;
+  
+    background-image: linear-gradient(to right top,#F3F6F9,rgb(189, 189, 189));
+}
+
+
+.error-msgs{
+    color:red;
+    font-weight: 500;
+
+
+}
+.error{
+    border:2px solid darkred;
+    background-color: rgba(255, 125, 125, 0.842) !important;
+    border-radius: 5px;
+}
+
+.dark-LcD{
+    border:4px groove goldenrod;
+ 
+    background-image: linear-gradient(to right top,#F3F6F9,rgb(189, 189, 189))
+    
+}
+
+
+
+
+.model-text{
+    color:darkred;
+}
+@media screen and (max-width: 398px) {
+    .model-text{
+        font-size: 12px;
+    }
+    .LcD{
+        border:4px groove darkred;
+       
+        height: 160px;
+        margin-top: 30px;
+       
+    }
+
+
+    }

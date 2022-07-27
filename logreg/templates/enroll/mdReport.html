@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    table, th, td {
+        border:1px solid black;
+      }
+      .scroll{
+        height:400px ; 
+        width:50%;
+        overflow:auto;
+        border: 1px solid black;
+      }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+
+
+    <div id="tab"  class="scroll">
+        <h1>Hot Product</h1>
+        <h4>{{s4.Product}}</h3>
+        <h4>{{s4.Quantity}}</h3>
+
+            <br>
+            <br>
+            <br>
+
+
+            <h1>Total Monthly Sales</h1>
+            <h4> {{s5}}</h4>
+<!-- <table style="width:50%">
+    <caption>Monthly sales</caption>
+    <tr>
+      
+      <th>Month</th>
+      <th>Sales</th>
+    </tr>
+    {% for key, value in s1.items %}
+    <tr>
+        <td>  {{ key }} </td> 
+        <td>  {{ value }} </td>
+        
+    </tr>
+{% endfor %}
+  </table> -->
+
+  <br>
+  <br>
+
+
+  <table>
+      <caption> Sales According to Quantity</caption>
+    <tr>
+      {% for col in s2.columns %}
+        <td>
+          {{col}}
+        </td>
+      {% endfor %}
+    </tr>
+      {% for index, row in s2.iterrows %}
+        <tr>
+          {% for cell in row %}
+            <td>
+              {{cell}}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+  </table>
+
+  <br>
+  <br>
+
+
+  <table>
+      <caption> Sales According to City</caption>
+    <tr>
+      {% for col in s3.columns %}
+        <td>
+          {{col}}
+        </td>
+      {% endfor %}
+    </tr>
+      {% for index, row in s3.iterrows %}
+        <tr>
+          {% for cell in row %}
+            <td>
+              {{cell}}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+  </table>
+
+
+
+
+  </div>
+  <p>
+    <input type="button" value="Create PDF" 
+        id="btPrint" onclick="createPDF()" />
+  </p>
+
+   
+</head>
+<body>
+    
+</body>
+<script>
+    function createPDF() {
+        var sTable = document.getElementById('tab').innerHTML;
+
+        var style = "<style>";
+        style = style + "table {width: 100%;font: 17px Calibri;}";
+        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+        style = style + "padding: 2px 3px;text-align: center;}";
+        style = style + "</style>";
+
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=700,width=700');
+
+        win.document.write('<html><head>');
+        win.document.write('<title>OSM</title>');   // <title> FOR PDF HEADER.
+        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+        win.document.write('</body></html>');
+
+        win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+
+        win.print();    // PRINT THE CONTENTS.
+    }
+</script>
+</html>

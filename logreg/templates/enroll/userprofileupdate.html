@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/profileupdate.css' %}" rel="stylesheet" type="text/css">
+    
+
+           
+                    
+    {% endblock %}
+   
+</head>
+<body>
+
+    <div class="container-fluid pt-4 px-4 pb-4 dark-mode-checking dark-mode-inner-back">
+        <div class="row bg-light justify-content-between rounded p-4 dark-mode-inner2-back">
+            <div class="col-12 d-flex align-items-center justify-content-between mb-2">
+                <h6 class="mb-0 text-center dark-mode-text">Profile Update</h6>
+
+
+            </div>
+            <div class="col">
+                <!-- <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back"> -->
+
+                    <form role="form" method="POST" action="">
+                        {% csrf_token %}
+
+                        <div class="row justify-content-center">
+                            <div class=" col-md-2">
+                                
+                                
+                                
+
+                            </div>
+                            <div class="col-12">
+
+                            </div>
+                            
+                        <div class="row justify-content-evenly">
+
+                            <div class="col-md-4">
+
+                                <div class="control-group required mb-2">
+
+                                    <div class="form-floating ">
+                                        <input type="text" class="form-control m-sizing" id="UserName" value="{{nam}}"
+                                            placeholder="Enter UserName" name="UserName">
+                                        <label for="floatingInput">UserName:</label>
+                                    </div>
+                                    <label class="error-msgs" id="Username-Error">User Name should not be empty</label>
+                                    <label class="error-msgs" id="Username-Error2">User Name invalid format</label>
+                              
+                                </div>
+
+                                <div class="control-group required mb-2 ">
+
+                                    <div class="form-floating ">
+                                        <input type="number"
+                                            class="form-control m-sizing input-block-level float"  value="{{ph}}"
+                                            id="PhoneNumber"    name="PhoneNumber" placeholder="Enter Your PhoneNumber">
+                                        <label for="floatingInput">PhoneNumber:</label>
+                                    </div>
+                                    <label class="error-msgs" id="Phone-Error1">PhoneNumber should not be empty</label>
+                                    <label class="error-msgs" id="Phone-Error2">PhoneNumber should not be negative</label>
+
+                                </div>
+
+
+
+                                <div class="control-group required mb-2">
+
+                                    <div class="form-floating ">
+                                        <input type="email" class="form-control m-sizing input-block-level"
+                                            id="emailaddress" name="emailaddress" placeholder=" Enter Email"  value="{{ema}}"
+                                            data-title="Please enter a valid Email">
+                                        <label for="Email">Email:</label>
+                                    </div>
+                                    <label class="error-msgs" id="email-Error1">Email should not be empty</label>
+                                    <label class="error-msgs" id="email-Error2">Email is not valid </label>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="control-group required mb-2">
+
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control m-sizing input-block-level"  value="{{orgn}}"
+                                            id="Organization-Name" name="Organization-Name" placeholder="Enter Organization Name"
+                                            data-title="Please enter your Organization name">
+                                        <label for="floatingInput">Organization Name:</label>
+                                    </div>
+                                    <label class="error-msgs" id="Orgaization-error">Organization Name should not be empty</label>
+                                    <label class="error-msgs" id="Orgaization-error2">Organization Name invalid format</label>
+                              
+                                </div>
+
+                                <div class="control-group required mb-2">
+
+                                    <div class="form-floating ">
+                                        <input type="password"
+                                            class="form-control m-sizing input-block-level regex" id="password-id"
+                                            name="password-id"
+                                            placeholder=" Enter Password" data-title="Password required ">
+                                        <label for="password1">Password:</label>
+                                    </div>
+                                    <label class="error-msgs" id="Password-error">Password should not be empty</label>
+                                    
+
+                                </div>
+
+                                <div class="control-group required mb-2">
+                                    <div class="form-floating">
+                                        <input type="password"
+                                            class="form-control m-sizing input-block-level match "
+                                            id="passwordConfirm" name="passwordConfirm" placeholder=" Enter password confirmation">
+                                        <label for="ConfirmPassword" >Confirm Password:</label>
+                                    </div>
+                                    <label class="error-msgs" id="CPassword-Error1">Confirm Password should not be empty</label>
+                                    <label class="error-msgs" id="CPassword-Error2">Passwords are not Match</label>
+                                    
+
+                                </div>
+
+                            </div>
+                         
+                            
+                          
+                            <div class="col-sm-10 ms-md-5">
+                                <div class="form-check">
+                                    <input class="form-check-input " type="checkbox" id="ConfrimCheck1">
+                                    <label class="form-check-label dark-mode-text " for="ConfrimCheck1"
+                                        id="ConfrimCheck1-label">
+                                        Confirm Changes
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row justify-content-center mt-4  " id="optional-for-security">
+                                <div class="col-md-8  ">
+                                   
+                                    <div class="input-group  security-col-setting mb-2" id="input-group1">
+
+                                        <div class="input-group-text m-sizing">
+                                            <!-- <div class="form-check form-switch"> -->
+
+                                               <img src=" {% static 'images/lock.png' %}" width="29px" >
+                                              
+                                            <!-- </div> -->
+                                        </div>
+                                        <select class="form-select m-sizing" id="selectitem"
+                                             name="selectitem"
+                                            aria-label="Example select with button addon" >
+                                            <option value="0" disabled selected>Select securtiy Question?
+                                            </option>
+                                            <option value="First pet Name?">First pet Name?</option>
+                                            <option value="Month in which you born?">Month in which you born?</option>
+                                            <option value="favourate singer?">favourate singer?</option>
+                                            
+                                        </select>
+
+                                    </div>
+                                    <div class="input-group mb-3 " id="securtiy-Questionfield">
+
+                                        <input type="text" class="form-control  m-sizing"
+                                            name="answer" id="answer"  aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default">
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    
+                                    <div class="row justify-content-end">
+                                        <div class="col-3 me-4 frmBtn">
+                                            <button type="submit" class="manualbutton2 " id="Save-Profile-Update">Save</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                <!-- </div> -->
+
+
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    
+
+
+{% endblock content %}
+
+
+{% block page_scripts %}
+
+<script src="{% static 'js/darkgen.js' %}"></script>  
+
+ <script src="{% static 'js/userSetting/userProfileUpdate.js' %}"></script>  
+                    
+{% endblock %}
+    
+</body>
+</html>

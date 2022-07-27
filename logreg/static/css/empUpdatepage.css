@@ -1,0 +1,31 @@
+input[type="number"] {
+    width: 100%;
+}
+input[type="date"] {
+    width: 100%;
+}
+
+.list-option{
+    border:1px solid #CED4DA;
+}
+
+.check-error{
+    color:red;
+}
+
+.check-input-error {
+    border:2px solid red;
+}
+
+
+.error-msgs{
+    color:red;
+    font-weight: 500;
+
+
+}
+@media screen and (max-width: 1199px) {
+    .trigger-hide{
+     display: none;
+    }
+    }

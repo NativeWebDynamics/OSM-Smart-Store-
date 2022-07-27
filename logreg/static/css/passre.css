@@ -1,0 +1,416 @@
+/* @import url('demo.css');
+@import url('font-awesome.css'); */
+body{
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+ img.Manual_bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+      
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+      
+			.container1 > header h1,
+			.container1 > header h2 {
+				color: #fff;
+				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+            }
+            
+
+/* GLOBALS */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
+
+/* Demo 3 */
+
+.form-31 {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 350px;
+    position: relative;
+     margin: 10px auto ; 
+    padding: 10px;
+    overflow: hidden;
+    bottom:5px;
+    
+    
+    /* Styles */
+    background: rgb(0, 0, 0); 
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow: 
+        inset 0 0 2px 1px rgba(255,255,255,0.08), 
+        0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.form-31 label {
+    /* Size and position */
+    width: 80%;
+    float: left;
+    padding-top: 9px;
+
+    /* Styles */
+    color: #ddd;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000;
+    text-indent: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-31 input[type=text],
+.form-31 input[type=password] {
+    /* Size and position */
+    width: 100%;
+    float: left;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    /* Styles */
+    background: #1f2124; /* Fallback */
+    background: -moz-linear-gradient(#1f2124, #27292c);
+    background: -ms-linear-gradient(#1f2124, #27292c);
+    background: -o-linear-gradient(#1f2124, #27292c);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#1f2124), to(#27292c));
+    background: -webkit-linear-gradient(#1f2124, #27292c);
+    background: linear-gradient(#1f2124, #27292c);    
+    border: 1px solid #000;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+
+}
+
+.form-31 input[type=text]:hover,
+.form-31 input[type=password]:hover,
+.form-31 label:hover ~ input[type=text],
+.form-31 label:hover ~ input[type=password] {
+    background: #27292c;
+}
+
+.form-31 input[type=text]:focus, 
+.form-31 input[type=password]:focus {
+    box-shadow: inset 0 0 2px #000;
+    background: #494d54;
+    border-color: #51cbee;
+    outline: none; /* Remove Chrome outline */
+}
+
+.form-31 p:nth-child(3),
+.form-31 p:nth-child(4) {
+    float: left;
+    width: 100%;
+}
+
+.form-31 label[for=remember] {
+    width: auto;
+    float: none;
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-indent: 2px;
+}
+
+.form-31 input[type=checkbox] {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.form-31 input[type=submit] {
+    /* Width and position */
+    width: 100%;
+    padding: 8px 5px;
+  
+    /* Styles */
+    border: 1px solid #fffb04; /* Fallback */
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background-image: linear-gradient(45deg, #c4861c,#ffa200,gold );
+    cursor:pointer;
+  
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
+
+.form-31 input[type=submit]:hover { 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.form-31 input[type=submit]:active { 
+    background: #ffa200;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.6);
+    border-color: #000; /* Fallback */
+    border-color: rgba(0,0,0,0.9);
+}
+
+.no-boxshadow .form-31 input[type=submit]:hover {
+    background: #ffa200;
+}
+
+.form-31:after {
+    /* Size and position */
+    content: "";
+    height: 1px;
+    width: 33%;
+    position: absolute;
+    left: 20%;
+    top: 0;
+
+    /* Styles */
+    background: -moz-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -ms-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -o-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), color-stop(0.25, #444), color-stop(0.5, #b6b6b8), color-stop(0.75, #444), to(transparent));
+    background: -webkit-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+}
+
+.form-31:before {
+    /* Size and position */
+    content: "";
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    left: 34%;
+    top: -7px;
+    
+    /* Styles */
+    border-radius: 50%;
+    box-shadow: 0 0 6px 4px #fff;
+}
+
+.form-31 p:nth-child(1):before{
+    /* Size and position */
+    content:"";
+    width:250px;
+    height:100px;
+    position:absolute;
+    top:0;
+    left:45px;
+
+    /* Styles */
+    -webkit-transform: rotate(75deg);
+    -moz-transform: rotate(75deg);
+    -ms-transform: rotate(75deg);
+    -o-transform: rotate(75deg);
+    transform: rotate(75deg);
+    background: -moz-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -ms-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -o-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -webkit-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    pointer-events:none;
+}
+
+.no-pointerevents .form-31 p:nth-child(1):before {
+    display: none;
+}
+
+
+/*password  recovery side  */
+
+#security-question{
+width: 100%;
+text-align: left;
+}
+#password-recovery{
+    width: 100%;
+}
+#submit{
+    width: 100%;
+}
+.clearfix{
+    margin-bottom: 0.3rem;
+}
+.clearfix1{
+    margin-bottom: 0.3rem;
+}
+
+/* media query for form front view */
+@media only screen and (max-width: 576px) {
+    .password{
+        margin-left:0px;
+        font-size: 14px;
+    }
+    .register{
+        font-size: 14px;
+    }
+    .form-31 label{
+        font-size: 11px;
+    }
+   
+  }
+  @media only screen and (max-width: 370px) {
+    .account{
+        height: 380px;
+   
+    }
+  }
+  
+
+/* manual css start */
+.account{
+    background-image: linear-gradient(to bottom right ,#FDA243,black);
+ 
+    height: 340px;
+   
+    border: 2px groove #d67b2b;
+    box-shadow: 2px 5px 6px gold, -2px -5px 6px rgb(241, 206, 4);
+    border-radius: 10px;
+    position:relative;
+    margin-bottom: 50px;
+    /* margin-left:37px; */
+    top:-30px;
+}
+@media only screen and (max-width: 333px) {
+    .clearfix{
+        margin-bottom: 0.01rem;
+    }
+    .account{
+        height:315px;
+        /* margin-left: 75px; */
+    }
+   
+    .admin-icon{
+       /* margin-left:40px; */
+    }
+   
+    
+    .form-31 input[type=submit] {
+     
+        
+        padding: 8px 3px;
+        font-size: 13px;
+        
+    }
+    .form-31 input[type=text],
+.form-31 input[type=password] {
+
+    padding: 4px 5px;
+    margin-bottom: 9px;
+}
+
+  }
+
+
+
+
+
+
+.user{
+   
+    color:white;
+    font-weight: bold;
+    font-size: 26px;
+
+}
+.user1{
+   
+    color:white;
+    font-weight: bold;
+    font-size: 28px;
+    display: inline-block;
+    margin:0px;
+    
+}
+.admin-icon{
+    position: relative;
+    top:10px;
+    z-index: 3;
+    /* left:20px; */
+}
+
+
+
+.register{
+    border-bottom:2px groove gold;
+    cursor:pointer;
+}
+
+/* Employee form  */
+
+.shadow{
+    text-shadow: 1px 1px 5px gold,2px 2px 5px rgb(7, 238, 219),-1px -1px 10px rgb(7, 238, 219); 
+    letter-spacing: 2px;
+}
+.shadow2{
+    text-shadow: 1px 1px 4px gold,1px 1px 5px rgb(7, 238, 219),-1px -1px 1px rgb(7, 238, 219); 
+    letter-spacing: 1px;
+}
+.m-button{
+    width: 100%;
+    padding: 8px 5px;
+  
+    /* Styles */
+    border: 1px solid #fffb04; /* Fallback */
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background-image: linear-gradient(45deg, #c4861c,#ffa200,gold );
+    cursor:pointer;
+  
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+
+}
+.m-button:hover{
+    color:white;
+}
+
+.error-message{
+    color:red;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: -2px -1px 6px darkred, -2px -1px 5px red ;
+}

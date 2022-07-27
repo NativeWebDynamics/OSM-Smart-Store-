@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+    {% load static %}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/registration.css' %}">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+  <!-- THIRD PARTY -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+
+  <title> Registration</title>
+</head>
+
+<body>
+  <div class="container-fluid" id="header1">
+    <div class="row" >
+      <div class="col-4" >
+        <img class="bg ms-3" src="{% static 'images/osm3.png' %}" width="300px">
+      </div>
+      <div class="col-8 mt-5" id="defination-of-OSM1">
+        <div>
+          <p class="defination mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste fuga ipsum iure quos
+            perferendis, perspiciatis impedit voluptate nihil sit accusamus in deserunt sint nisi, quidem quam quis eos
+            ex amet?</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid manual-container-setting" >
+    <div class="row justify-content-around align-items-center ma-row" >
+      <div class="col-lg-3" id="defination-of-OSM2">
+        <div>
+          <p class="defination mb-5"> OSM Smart Store Monitoring System is an intelligent System Which will enable the user to track down his sales , employee and stock with
+            an additional feature of sales prediction with the best accuracy available.
+            </p>
+        </div>
+      </div>
+       <div class=" col-lg-8 col-md-10  main-page ">
+
+        <div class="row registeration-text-row align-items-center">
+
+          <div class="col-12 ">
+            <a  href="{% url 'login' %}" style="text-decoration: none ; font-size: 14px; font-weight: bold;" class="  ms-md-5 "> <label style="font-size: 20px ; display: inline" >&#8592</label> Back to Login</a>
+            <h3 class="text-center shadow2">Registration</h3>
+
+          </div>
+        </div>
+        <form class="form-horizontal simple-validation mb-5" id="frmExample" novalidate  method="POST">
+          {% csrf_token %}
+          <div class="row justify-content-evenly"> 
+            <div class="col-md-4">
+
+              <div class="control-group required">
+
+                <div class="form-floating ">
+                  <input type="text" class="form-control m-sizing" id="username" name="username" placeholder="Enter UserName"
+                    data-title="Please enter your UserName">
+                  <label for="floatingInput">UserName:</label>
+                
+                </div>
+              </div>
+
+              <div class="control-group required">
+
+
+                <div class="form-floating ">
+                  <input type="number" class="form-control m-sizing input-block-level float" id="PhoneNumber"
+                    name="PhoneNumber"  placeholder="Enter Your PhoneNumber" 
+                    data-title="PhoneNumber field required - Only numeric values allowed">
+                  <label for="floatingInput">PhoneNumber:</label>
+                </div>
+
+              </div>
+
+
+
+              <div class="control-group required">
+
+                <div class="form-floating ">
+                  <input type="email" class="form-control m-sizing input-block-level" id="emailaddress" 
+                    name="emailaddress"
+                    placeholder=" Enter Email" data-title="Please enter a valid Email">
+                  <label for="Email">Email:</label>
+                </div>
+              </div>
+
+
+
+            </div>
+
+            <div class="col-md-4">
+
+              <div class="control-group required">
+
+                <div class="form-floating">
+                  <input type="text" class="form-control m-sizing input-block-level" id="Organization-Name " name="Organization-Name"
+                    placeholder="Enter Organization Name" data-title="Please enter your Organization name">
+                  <label for="floatingInput">Organization Name:</label>
+                </div>
+              </div>
+
+              <div class="control-group required">
+
+                <div class="form-floating ">
+                  <input type="password" class="form-control m-sizing input-block-level regex" id="password" name="password"
+                    placeholder=" Enter Password" data-title="Password required" data-regex="^[^\s]{6,20}$"
+                    data-regex-title="Please Enter a password 6 - 20 characters in length">
+                  <label for="password1">Password:</label>
+                </div>
+
+              </div>
+
+              <div class="control-group required">
+                <div class="form-floating">
+                  <input type="password" class="form-control m-sizing input-block-level match" id="passwordConfirm"
+                   name="passwordConfirm" placeholder=" Enter password confirmation" data-title="Confirmation password required"
+                    data-match="password" data-match-title="Your password and confirmation password do not match">
+                  <label for="ConfirmPassword">Confirm Password:</label>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-8  " >
+              <div class="control-group ms-2">
+                <label for="terms" class="control-label required shadow1">Privacy policy</label>
+                <div class="controls">
+                  <label class="checkbox">
+                    <input type="checkbox" name="checkme" id="terms" class="required"
+                      data-title="You must agree to the terms"><label class="shadow1">Yes! I Agree </label>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+         
+         
+            
+
+          <div class="row justify-content-center " id="optional-for-security">
+            <div class="col-md-8  ">
+              <h4 class="text-center shadow2 mb-4">optional</h4>
+              <div class="input-group mb-3 security-col-setting" id="input-group1">
+
+                <div class="input-group-text">
+                  <div class="form-check form-switch">
+
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                      onclick="optionalField()">
+
+                  </div>
+                </div>
+                <select name="selectitem" class="form-select" id="selectitem" aria-label="Example select with button addon" disabled>
+                  <option value="0" disabled selected>Select securtiy Question?</option>
+                  <option value="First pet Name?">First pet Name?</option>
+                  <option value="Month in which you born?">Month in which you born?</option>
+                  <option value="favourate singer?">favourate singer?</option>
+                </select>
+
+              </div>
+              <div class="input-group mb-3" id="securtiy-Questionfield">
+
+                <input type="text" class="form-control" aria-label="Sizing example input" name="answer"
+                id="answer" aria-describedby="inputGroup-sizing-default">
+              </div>
+
+
+
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <!-- <div class="frmPrc hide">
+                <button type="button" class="btn btn-primary" disabled="disabled"><i class="icon-spinner icon-spin"></i>
+                  Processing</button>
+              </div> -->
+              <div class="row justify-content-end">
+                <div class="col-3 me-4 frmBtn">
+
+                  
+                  
+                  <button  type="submit" class=" m-button ms-3">Register</button>
+                
+                   
+                  
+                </div>
+              </div>
+
+           
+
+
+             
+
+            </div>
+          </div>
+        </form>
+
+
+      </div> 
+    </div>
+
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+  <script src="{% static 'js/registration.js' %}"></script>
+  <script src="{% static 'js/validations/scripts.js' %}"></script>
+  <script src="{% static 'js/validations/validation.js' %}"></script>
+
+  
+  
+
+</body>
+
+</html>

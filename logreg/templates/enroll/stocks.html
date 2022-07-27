@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/stock.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/emp.css' %}" rel="stylesheet" type="text/css">
+
+
+           
+                    
+    {% endblock %}
+   
+</head>
+<body>
+
+    
+
+
+
+<div class="container-fluid pt-4 px- dark-mode-inner-back">
+    <div class="bg-light text-center rounded p-4 dark-mode-inner2-back">
+
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <h6 class="mb-0 dark-mode-text">Stocks Data</h6>
+
+</div>
+<div class="table-responsive dark-mode-table">
+    <table class="table text-start align-middle table-bordered table-hover mb-0">
+        <thead>
+            <tr class="text-dark">
+        
+                <th scope="col" class="dark-mode-text">Product-ID</th>
+                <th scope="col" class="dark-mode-text">Product-Name</th>
+                <th scope="col" class="dark-mode-text">Product-price ($)</th>
+                <th scope="col" class="dark-mode-text">Product-Quantity</th>
+                <th scope="col" class="dark-mode-text">Operation</th>
+            </tr>
+        </thead>
+        <tbody class="dark-mode-text">
+            {% for st in prod %}
+
+            
+            <tr>
+                <td>{{st.id}}</td>
+                    <td>{{st.Product_name}}</td>
+                    <td>{{st.Product_price}}</td>
+                    <td>{{st.Quantity}}</td>
+          
+                
+               
+                
+                <td>
+                    <form action="{% url 'deleteprod' st.id %}" method="POST" class="d-inline"> 
+                        
+                        {% csrf_token  %}
+
+                           
+                        <input  type="Submit" class="btn manualbutton1" value="Delete">
+                        
+                    </form>
+                    <a class="btn manualbutton2"  href="{% url 'stockup' st.id %}" id="update-button">Update</a>
+                   
+                
+                </td>
+
+           
+          
+
+                <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+
+            </tr>
+            {%  endfor  %}
+        
+
+
+
+
+
+            <!-- adding new record -->
+            <tr id="sample-fields" class="fields">
+
+
+                <form method="POST">
+                    {% csrf_token %}
+
+
+                    
+                <td>
+                    <input type="text" value="Auto" size="10" placeholder="Product ID"
+                        id="product-id"  class="general-input-field" >
+                </td>
+                <td>
+                    <input type="text" size="20" placeholder="product-Name" id="product-name"
+                    name="product-name" class="general-input-field" >
+                </td>
+                <td>
+                    <input type="number" size="13" placeholder="Price"
+                    name="product-price" id="product-price" class="general-input-field" >
+                </td>
+                <td>
+                    <input type="number" id="product-quan"   placeholder="Quantity" class="general-input-field"
+                    name="product-Quantity"/>
+                </td>
+                    <td>
+                        <button class="btn Save-btn" type="submit" id="Save-button">Save </button>
+                    </td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+    <h6 class="missing-value">missing values</h6>
+</div>
+
+</div>
+
+
+<button class="Add-button" id="Add-button">Add New</button>
+<button class="close-button2" id="close1-button">close</button>
+{% endblock content %}
+</div>
+
+{% block page_scripts %}
+
+<script src="{% static 'js/stock/stok.js' %}"></script>  
+<script src="{% static 'js/darkgen.js' %}"></script> 
+                    
+{% endblock %}
+    
+</body>
+</html>

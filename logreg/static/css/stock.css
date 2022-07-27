@@ -1,0 +1,33 @@
+
+
+.gold-color{
+    
+    padding-left: 30px;
+    padding-right: 30px;
+ 
+}
+
+.error-msgs{
+    color:red;
+    font-weight: 500;
+
+
+}
+
+@media screen and (max-width: 1199px) {
+.trigger-hide{
+ display: none;
+}
+}
+
+input[type="number"] {
+    width: 100%;
+}
+
+.check-error{
+    color:red;
+}
+
+.check-input-error {
+    border:2px solid red;
+}

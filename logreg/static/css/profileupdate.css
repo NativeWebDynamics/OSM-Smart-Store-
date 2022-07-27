@@ -1,0 +1,55 @@
+.ImageContainer{
+    
+    border-radius: 40px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    
+}
+
+
+img { max-width: 100%; max-height: 100%; }
+/* input { display: none; } */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.m-sizing{
+    border:2px outset gold;
+    
+}
+.manualbutton2{
+    padding: 1px 6px;
+    /* border: 1px groove red; */
+    margin: 5px;
+    border-radius: 10px;
+    color:white;
+    background-image:linear-gradient(to right top,#01eeff,rgb(0, 195, 255));
+    border: 2px outset rgb(48, 224, 255);
+    padding:3px 20px 3px 20px ;
+}
+.error-msgs{
+    color:red;
+    font-weight: 500;
+
+
+}
+.error-checkbox{
+   border:2px solid red;
+
+
+}
+.error{
+    border:2px solid darkred;
+    background-color: rgba(255, 88, 88, 0.842) !important;
+    border-radius: 5px;
+}
+@media screen and (max-width: 420px) {
+    .error-msgs{
+       font-size: 13px;
+    
+    
+    }
+    }

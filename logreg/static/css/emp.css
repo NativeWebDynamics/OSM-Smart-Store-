@@ -1,0 +1,77 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.manualbutton1{
+    padding: 1px 6px;
+ 
+    margin: 5px;
+    border-radius: 10px;
+    color:white;
+    background-image:linear-gradient(to right bottom,rgb(110, 31, 0),red);
+    /* background-image:radial-gradient(#ff0400 ,#c93939,red);  */
+    border: 2px outset darkred;
+    font-size: 14px;
+}
+.manualbutton2{
+    padding: 1px 6px;
+    /* border: 1px groove red; */
+    margin: 5px;
+    border-radius: 10px;
+    color:white;
+    background-image:linear-gradient(to right top,#ffa125,gold);
+    border: 2px outset orangered;
+    font-size: 14px;
+}
+.Add-button{
+    margin:9px 1px;
+    border:1px inset blue;
+    color:white;
+    background-image:linear-gradient(to right bottom,rgb(152, 255, 246),#1845B8);
+    border-radius: 10px;
+}
+.Save-btn{
+   padding: 3px 50px;
+    border:1px groove blue;
+    color:white;
+    background-image:linear-gradient(to right bottom,rgb(152, 255, 246),#1845B8);
+    border-radius: 10px;
+    margin-left:8px;
+}
+.close-button2{
+    margin:9px 1px;
+    border:1px groove darkred;
+    color:white;
+    background-image:linear-gradient(to right bottom,rgb(110, 31, 0),red);
+    border-radius: 10px;
+}
+.fields{
+    display: none;
+}
+input[type="date"]{
+    width: 145px;
+}
+input[type="number"]{
+    width: 95px;
+}
+/* .emp-name-width{
+    width:  120px;
+} */
+.error{
+    border:2px solid darkred;
+    background-color: rgba(255, 125, 125, 0.842) !important;
+    border-radius: 5px;
+}
+.missing-value{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color:darkred;
+}
+.general-input-field{
+    background-color: #F3F6F9;
+    border: initial;
+}
+tr:hover .general-input-field {
+    background-color: #E1E4E6;
+}

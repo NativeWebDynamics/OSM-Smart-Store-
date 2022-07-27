@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/prediction.css' %}" rel="stylesheet" type="text/css">
+
+           
+                    
+    {% endblock %}
+</head>
+<body>
+
+
+    
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid pt-4 px-4 pb-4 dark-mode-inner-back">
+        <div class="row bg-light justify-content-between rounded p-4 dark-mode-inner2-back">
+            <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0 text-center dark-mode-text">Sale Prediction</h6>
+
+
+            </div>
+            <!-- -------------------------------------------------------- -->
+            <div class="table-responsive  mb-5">
+                <table
+                    class="table-xs text-start ms-xl-5 align-middle table-bordered table-hover mb-0 dark-mode-text">
+                    <thead>
+                        <tr class="text-dark  font-size1">
+                            <!-- <th scope="col"><input class="form-check-input" type="checkbox"></th> -->
+                            <th scope="col" class="dark-mode-text ">Product Name</th>
+                            <th scope="col" class="dark-mode-text">Product ID</th>
+                            <th scope="col" class="dark-mode-text">Product Name</th>
+                            <th scope="col" class="dark-mode-text">Product ID</th>
+                            <th scope="col" class="dark-mode-text">Product Name</th>
+                            <th scope="col" class="dark-mode-text">Product ID</th>
+                            <th scope="col" class="dark-mode-text">Product Name</th>
+                            <th scope="col" class="dark-mode-text">Product ID</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="font-size1">
+                        <tr>
+                            <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                            <td>USB-C Charging Cable</td>
+                            <td>1</td>
+                            <td>Apple Airpods Headphones</td>
+                            <td>6</td>
+                            <td>AAA Batteries (4-pack)</td>
+                            <td>11</td>
+                            <td>20in Monitor</td>
+                            <td>16</td>
+
+                            <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                        </tr>
+                        <tr>
+                            <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                            <td>MacBook Pro Laptop</td>
+                            <td>2</td>
+
+                            <td>Lightning Charging Cable</td>
+                            <td>7</td>
+
+                            <td>34in Ultrawide Monitor</td>
+                            <td>12</td>
+
+                            <td>LG Dryer</td>
+                            <td>17</td>
+                            <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                        </tr>
+                        <tr>
+                            <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                            <td>ThinkPad Laptop</td>
+                            <td>3</td>
+                            <td>Wired Headphones</td>
+                            <td>8</td>
+                            <td>IPhone</td>
+                            <td>13</td>
+
+                            <td>Vareebadd Phone</td>
+                            <td>18</td>
+
+
+                            <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                        </tr>
+                        <tr>
+                            <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                            <td>27in FHD Monitor</td>
+                            <td>4</td>
+                            <td>Flatscreen TV</td>
+                            <td>9</td>
+                            <td>Google Phone</td>
+                            <td>14</td>
+
+                            <td>LG Washing Machine</td>
+                            <td>19</td>
+
+                            <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                        </tr>
+                        <tr>
+                            <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                            <td>Bose SoundSport</td>
+                            <td>5</td>
+
+                            <td>AA Batteries (4packs) </td>
+                            <td>10</td>
+                            <td>27in 4K Gaming Monitor</td>
+                            <td>15</td>
+                            <td>-</td>
+                            <td>-</td>
+
+                            <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+            <!-- -------------------------------------------------- -->
+            <div class="col-sm-12 col-xl-6 mt-4 ms-xl-5">
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+
+                    <form method="POST" action="">
+
+                        {% csrf_token  %}
+
+                        <div class="form-floating mb-2">
+                            <input type="number" class="form-control" id="Id-input"
+                              name="Id-input"   placeholder="Enter Product Name">
+                            <label for="floatingInput">Product Id:</label>
+                            
+
+                        </div>
+                        <label class="mb-1 error-msgs " id="Product-error">please enter Product ID</label>
+                        <label class="mb-1 error-msgs " id="Product-error2">Range should be 1-19</label>
+
+
+                        <div class="form-floating mb-2">
+                            <input type="number" class="form-control" id="Month-input"
+                                name="Month-input"
+                                placeholder="Enter Product Price">
+                            <label for="floatingInput">Month:</label>
+
+                        </div>
+                        <label class="mb-1 error-msgs " id="Month-error">please enter Month</label>
+                        <label class="mb-1 error-msgs " id="Month-error2">Month should be within 1-12 range</label>
+
+
+
+
+                        <div class="form-floating mb-2">
+                            <input type="number" class="form-control" id="Year-input"
+                               name="Year-input"
+                                placeholder="Enter Product Quantity">
+                            <label for="floatingInput">Year:</label>
+                        </div>
+                        <label class="mb-1 error-msgs " id="Year-error">please enter Year</label>
+                        <label class="mb-1 error-msgs " id="Year-error2">year should be select after 2022</label>
+                        
+                        <div class="row mb-3">
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary gold-color" id="Check">Predict</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-5 trigger-hide ">
+                <div class="dark-LcD " id="LCD-switch">
+                    <div class="p-5">
+                    
+                                <h5 class="model-text">Model Score: <span class="ms-md-5"> {{score}} </span></h5>
+                                <br>
+                                <h5 class="model-text ">Sales Prediction: <span  class="ms-md-3"> {{pre}} $ </span> </h5>
+                         
+                               
+                           
+                      
+                       
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    {% endblock %}
+
+    {% block page_scripts %}
+
+    <script src="{% static 'js/prediction.js' %}"></script>  
+    <script src="{% static 'js/darkgen.js' %}"></script>
+                       
+   {% endblock %}
+       
+   </body>
+   </html>
+  
+
+

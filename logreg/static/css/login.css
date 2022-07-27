@@ -1,0 +1,732 @@
+/* @import url('demo.css');
+@import url('font-awesome.css'); */
+body{
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+ img.Manual_bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+      
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+      
+			.container1 > header h1,
+			.container1 > header h2 {
+				color: #fff;
+				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+            }
+            
+
+/* GLOBALS */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
+
+/* Demo 3 */
+
+.form-31 {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 350px;
+    position: relative;
+     margin: 20px auto ; 
+    padding: 10px;
+    overflow: hidden;
+    bottom:5px;
+    
+    
+    /* Styles */
+    background: rgb(0, 0, 0); 
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow: 
+        inset 0 0 2px 1px rgba(255,255,255,0.08), 
+        0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.form-31 label {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding-top: 9px;
+
+    /* Styles */
+    color: #ddd;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000;
+    text-indent: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-31 input[type=text],
+.form-31 input[type=password] {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    /* Styles */
+    background: #1f2124; /* Fallback */
+    background: -moz-linear-gradient(#1f2124, #27292c);
+    background: -ms-linear-gradient(#1f2124, #27292c);
+    background: -o-linear-gradient(#1f2124, #27292c);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#1f2124), to(#27292c));
+    background: -webkit-linear-gradient(#1f2124, #27292c);
+    background: linear-gradient(#1f2124, #27292c);    
+    border: 1px solid #000;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+
+}
+
+.form-31 input[type=text]:hover,
+.form-31 input[type=password]:hover,
+.form-31 label:hover ~ input[type=text],
+.form-31 label:hover ~ input[type=password] {
+    background: #27292c;
+}
+
+.form-31 input[type=text]:focus, 
+.form-31 input[type=password]:focus {
+    box-shadow: inset 0 0 2px #000;
+    background: #494d54;
+    border-color: #51cbee;
+    outline: none; /* Remove Chrome outline */
+}
+
+.form-31 p:nth-child(3),
+.form-31 p:nth-child(4) {
+    float: left;
+    width: 50%;
+}
+
+.form-31 label[for=remember] {
+    width: auto;
+    float: none;
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-indent: 2px;
+}
+
+.form-31 input[type=checkbox] {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.form-31 input[type=submit] {
+    /* Width and position */
+    width: 100%;
+    padding: 8px 5px;
+  
+    /* Styles */
+    border: 1px solid #fffb04; /* Fallback */
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background-image: linear-gradient(45deg, #c4861c,#ffa200,gold );
+    cursor:pointer;
+  
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
+
+.form-31 input[type=submit]:hover { 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.form-31 input[type=submit]:active { 
+    background: #ffa200;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.6);
+    border-color: #000; /* Fallback */
+    border-color: rgba(0,0,0,0.9);
+}
+
+.no-boxshadow .form-31 input[type=submit]:hover {
+    background: #ffa200;
+}
+
+.form-31:after {
+    /* Size and position */
+    content: "";
+    height: 1px;
+    width: 33%;
+    position: absolute;
+    left: 20%;
+    top: 0;
+
+    /* Styles */
+    background: -moz-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -ms-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -o-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), color-stop(0.25, #444), color-stop(0.5, #b6b6b8), color-stop(0.75, #444), to(transparent));
+    background: -webkit-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+}
+
+.form-31:before {
+    /* Size and position */
+    content: "";
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    left: 34%;
+    top: -7px;
+    
+    /* Styles */
+    border-radius: 50%;
+    box-shadow: 0 0 6px 4px #fff;
+}
+
+.form-31 p:nth-child(1):before{
+    /* Size and position */
+    content:"";
+    width:250px;
+    height:100px;
+    position:absolute;
+    top:0;
+    left:45px;
+
+    /* Styles */
+    -webkit-transform: rotate(75deg);
+    -moz-transform: rotate(75deg);
+    -ms-transform: rotate(75deg);
+    -o-transform: rotate(75deg);
+    transform: rotate(75deg);
+    background: -moz-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -ms-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -o-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -webkit-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    pointer-events:none;
+}
+
+.no-pointerevents .form-31 p:nth-child(1):before {
+    display: none;
+}
+
+
+/*password  recovery side  */
+.form-31-b {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 350px;
+    position: relative;
+     margin: 20px auto ; 
+    padding: 10px;
+    overflow: hidden;
+    bottom:5px;
+    
+    
+    /* Styles */
+    background: rgb(0, 0, 0); 
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow: 
+        inset 0 0 2px 1px rgba(255,255,255,0.08), 
+        0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.form-31-b label {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding-top: 9px;
+
+    /* Styles */
+    color: #ddd;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000;
+    text-indent: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-31-b input[type=text],
+.form-31-b input[type=password] {
+    
+    width: 50%;
+    float: left;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    
+    background: #1f2124; 
+    background: -moz-linear-gradient(#1f2124, #27292c);
+    background: -ms-linear-gradient(#1f2124, #27292c);
+    background: -o-linear-gradient(#1f2124, #27292c);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#1f2124), to(#27292c));
+    background: -webkit-linear-gradient(#1f2124, #27292c);
+    background: linear-gradient(#1f2124, #27292c);    
+    border: 1px solid #000;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+
+  
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+
+}
+
+.form-31-b input[type=text]:hover,
+.form-31-b input[type=password]:hover,
+.form-31-b label:hover ~ input[type=text],
+.form-31-b label:hover ~ input[type=password] {
+    background: #27292c;
+}
+
+.form-31-b input[type=text]:focus, 
+.form-31-b input[type=password]:focus {
+    box-shadow: inset 0 0 2px #000;
+    background: #494d54;
+    border-color: #51cbee;
+    outline: none; /* Remove Chrome outline */
+}
+
+
+
+
+
+.form-31-b input[type=submit] {
+    /* Width and position */
+    width: 100%;
+    padding: 8px 5px;
+  
+    /* Styles */
+    border: 1px solid #ffe607; /* Fallback */
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background-image: linear-gradient(45deg, #c4861c,#ffa200,gold );
+    cursor:pointer;
+  
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
+
+.form-31-b input[type=submit]:hover { 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.form-31-b input[type=submit]:active { 
+    background: #ffa200;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.6);
+    border-color: #000; /* Fallback */
+    border-color: rgba(0,0,0,0.9);
+}
+
+.no-boxshadow .form-31-b input[type=submit]:hover {
+    background: #ffa200;
+}
+
+.form-31-b:after {
+    /* Size and position */
+    content: "";
+    height: 1px;
+    width: 33%;
+    position: absolute;
+    left: 20%;
+    top: 0;
+
+    /* Styles */
+    background: -moz-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -ms-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -o-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), color-stop(0.25, #444), color-stop(0.5, #b6b6b8), color-stop(0.75, #444), to(transparent));
+    background: -webkit-linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+    background: linear-gradient(left, transparent, #444, #b6b6b8, #444, transparent);
+}
+
+.form-31-b:before {
+    /* Size and position */
+    content: "";
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    left: 34%;
+    top: -7px;
+    
+    /* Styles */
+    border-radius: 50%;
+    box-shadow: 0 0 6px 4px #fff;
+}
+
+.form-31-b p:nth-child(1):before{
+    /* Size and position */
+    content:"";
+    width:250px;
+    height:100px;
+    position:absolute;
+    top:0;
+    left:45px;
+
+    /* Styles */
+    -webkit-transform: rotate(75deg);
+    -moz-transform: rotate(75deg);
+    -ms-transform: rotate(75deg);
+    -o-transform: rotate(75deg);
+    transform: rotate(75deg);
+    background: -moz-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -ms-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -o-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: -webkit-linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    background: linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+    pointer-events:none;
+}
+
+.no-pointerevents .form-31-b p:nth-child(1):before {
+    display: none;
+}
+#security-question{
+width: 100%;
+text-align: left;
+}
+#password-recovery{
+    width: 100%;
+}
+#submit{
+    width: 100%;
+}
+.clearfix{
+    margin-bottom: 0.3rem;
+}
+.clearfix1{
+    margin-bottom: 0.3rem;
+}
+
+/* media query for form front view */
+@media only screen and (max-width: 576px) {
+    .password{
+        margin-left:0px;
+        font-size: 14px;
+    }
+    .register{
+        font-size: 14px;
+    }
+    .form-31 label{
+        font-size: 11px;
+    }
+   
+  }
+
+  
+
+
+
+
+
+
+/* flip card css */
+
+.flip-card {
+    background-color: transparent;
+    
+    
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+    
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  } */
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+    /* overflow: hidden; */
+  }
+  
+  .undo-Button:hover{
+      
+    box-shadow: 3px 2px 10px gold,-3px -4px 6px gold,4px 5px 10px 4px rgb(255, 255, 255),
+    -2px -2px 10px 4px rgb(255, 255, 255),
+    -3px -5px 15px gold inset,1px 2px 15px gold inset;;
+  
+}
+
+.undo-Button{
+     background-image: linear-gradient(to right,rgb(255, 255, 255),rgb(255, 255, 255));
+    
+     border:initial;
+      box-shadow: 4px 6px 10px gold,2px 3px 2px rgb(255, 238, 0),
+      -4px -6px 15px gold,-2px -3px 2px rgb(252, 206, 0),
+      -3px -5px 15px gold inset,1px 2px 15px gold inset;
+      /* padding-left:20px;
+      padding-right: 20px; */
+      border-bottom-left-radius: 45px;
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 40px;
+      /* transform: rotate(-40deg); */
+      position: absolute;
+      left:10px;
+      top:6px;
+      /* right:30px;
+      top:20px; */
+      overflow: hidden;
+     
+}
+.arrow{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* manual css start */
+.account{
+    background-image: linear-gradient(to bottom right ,#FDA243,black);
+    /* background-image: linear-gradient(to bottom right, #ffc3a0, rgba(255,0,0,1)); */
+    /* background-image: linear-gradient(to bottom right ,#36d1dc, #ffc3a0,#fffbd5); */
+    /* background-image: linear-gradient(to bottom right ,#fffbd5, black ); */
+    
+    /* background-image: linear-gradient(to bottom right,#fffbd5,#ce1c0c); */
+    height: 315px;
+   
+    border: 2px groove #d67b2b;
+    box-shadow: 2px 5px 6px gold, -2px -5px 6px rgb(241, 206, 4);
+    border-radius: 10px;
+    position:relative;
+    margin-bottom: 50px;
+    margin-left:37px;
+    top:-30px;
+}
+@media only screen and (max-width: 333px) {
+    .clearfix{
+        margin-bottom: 0.01rem;
+    }
+    .account{
+        height:275px;
+        margin-left: 75px;
+    }
+   
+    .admin-icon{
+       margin-left:40px;
+    }
+   
+    
+    .form-31 input[type=submit] {
+     
+        
+        padding: 8px 3px;
+        font-size: 13px;
+        
+    }
+    .form-31 input[type=text],
+.form-31 input[type=password] {
+
+    padding: 4px 5px;
+    margin-bottom: 9px;
+}
+
+  }
+
+
+
+
+
+
+.user{
+   
+    color:white;
+    font-weight: bold;
+    font-size: 26px;
+
+}
+.user1{
+   
+    color:white;
+    font-weight: bold;
+    font-size: 28px;
+    display: inline-block;
+    margin:0px;
+    
+}
+.admin-icon{
+    position: relative;
+    top:10px;
+    z-index: 3;
+    left:20px;
+}
+.admin-icon2{
+    position: relative;
+    top:25px;
+    z-index: 3;
+    left:20px;
+    filter:contrast(10%);
+    
+}
+
+.forget-password{
+    
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    
+}
+.password{
+    border-bottom:2px groove gold;
+    cursor:pointer;
+    display: inline-block;
+    margin-left:20px;
+   
+}
+.register{
+    border-bottom:2px groove gold;
+    cursor:pointer;
+}
+
+/* Employee form  */
+.account2{
+    background-image: linear-gradient(to bottom right ,#000000,#2b2727e7);
+    /* background-image: linear-gradient(to bottom right, #ffc3a0, rgba(255,0,0,1)); */
+    /* background-image: linear-gradient(to bottom right ,#36d1dc, #ffc3a0,#fffbd5); */
+    /* background-image: linear-gradient(to bottom right ,#fffbd5, black ); */
+    
+    /* background-image: linear-gradient(to bottom right,#fffbd5,#ce1c0c); */
+    height: 270px;
+   
+    border: 2px groove #d67b2b;
+    box-shadow: 2px 5px 6px gold, -2px -5px 6px rgb(241, 206, 4);
+    border-radius: 10px;
+    position:relative;
+    margin-bottom: 50px;
+    margin-left:37px;
+    top:-30px;
+}
+@media only screen and (max-width: 333px) {
+    .account2{
+        margin-left: 75px;
+    }
+}
+.form-floating>.form-control{
+    background-color: transparent !important;
+    border: 1px inset #fdd7038a;
+    color:white;
+    border-radius: 20px;
+    
+}
+
+.form-floating>.form-control:hover{
+    box-shadow: 1px 1px 5px gold,2px 2px 5px rgb(7, 238, 219),-1px -1px 10px rgb(7, 238, 219);
+}
+.username-employee{
+    color:gold;
+}
+.shadow{
+    text-shadow: 1px 1px 5px gold,2px 2px 5px rgb(7, 238, 219),-1px -1px 10px rgb(7, 238, 219); 
+    letter-spacing: 2px;
+}
+.shadow2{
+    text-shadow: 1px 1px 4px gold,1px 1px 5px rgb(7, 238, 219),-1px -1px 1px rgb(7, 238, 219); 
+    letter-spacing: 1px;
+}
+.m-button{
+    width: 100%;
+    padding: 8px 5px;
+  
+    /* Styles */
+    border: 1px solid #fffb04; /* Fallback */
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background-image: linear-gradient(45deg, #c4861c,#ffa200,gold );
+    cursor:pointer;
+  
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+
+}
+.m-button:hover{
+    color:white;
+}

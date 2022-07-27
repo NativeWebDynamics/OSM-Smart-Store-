@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/stock.css' %}" rel="stylesheet" type="text/css">
+
+           
+                    
+    {% endblock %}
+</head>
+<body>
+
+
+    
+    <div class="container-fluid pt-4 px-4 pb-4 dark-mode-inner-back">
+        <div class="row bg-light justify-content-between rounded p-4 dark-mode-inner2-back">
+            <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0 text-center">Update Stocks Data</h6>
+                
+                
+            </div>
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+                   
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-floating mb-2">
+                            <input type="text" class="form-control"  id="product-id" name="product-id" value={{id}}
+                                placeholder="Enter Product ID" disabled>
+                            <label for="floatingInput">Product ID:</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <input type="text" class="form-control"  id="product-name"  
+                               name="product-name" placeholder="Enter Product Name" value={{nam}}>
+                            <label for="floatingInput">Product Name:</label>
+                        </div>
+                        <label class="mb-1 error-msgs " id="Name-error">please enter Name</label>
+
+                        <div class="form-floating mb-2">
+                            <input type="number" class="form-control" id="product-price"
+                              name="product-price"  placeholder="Enter Product Price" value={{price}}>
+                            <label for="floatingInput">Product Price:</label>
+                        </div>
+                        <label class="mb-1 error-msgs " id="price-error">please enter price</label>
+                        <label class="mb-1 error-msgs " id="price-error2">price should be positive</label>
+
+
+
+                        <div class="form-floating mb-2">
+                            <input type="number" class="form-control" id="product-Quantity"
+                               name="product-Quantity" placeholder="Enter Product Quantity" value={{quan}}>
+                            <label for="floatingInput">Product Quantity:</label>
+                        </div>
+                        <label class="mb-1 error-msgs " id="quantity-error">please enter Quantity</label>
+                        <label class="mb-1 error-msgs " id="quantity-error2">Quantity should be positive</label>
+
+
+                        <div class="row mb-3">
+                           
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input " type="checkbox" id="ConfrimCheck1">
+                                    <label class="form-check-label " for="ConfrimCheck1" id="ConfrimCheck1-label">
+                                        Confirm Changes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary gold-color" id="updatedSave">Save</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-5 trigger-hide">
+                
+               <img src="{% static 'images/stockupdate.png' %}" width="320px" height="250px"  class="Stock-img mt-4">
+
+             </div>
+           
+
+        </div>
+       
+
+
+        {% endblock content %}
+    </div>
+    {% block page_scripts %}
+
+ <script src="{% static 'js/stock/stockupd.js' %}"></script>
+ <script src="{% static 'js/darkgen.js' %}"></script>  
+
+                    
+{% endblock %}
+    
+</body>
+</html>

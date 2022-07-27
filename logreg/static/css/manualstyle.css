@@ -1,0 +1,68 @@
+.sticky-top {
+    /* background-image: linear-gradient(to right,#fff0cd,#fff89f,#ffcb58)!important; */
+    /* background-image: linear-gradient(to right,#ffbfbf,#ffd18b,#f8bc3b)!important; */
+    /* background-image: linear-gradient(to right,#acfbff,#ffffff)!important; */
+
+    background-image: linear-gradient(to right,#ffe694,#ffffff)!important;
+
+  
+}
+.manual-list{
+    display: none !important;
+}
+.color-of-checked{
+    color:gold;
+    font-style: oblique;
+}
+
+
+
+
+.dark-Mode{
+    background-image: linear-gradient(to bottom right,#030303,#030303,#030303,#ff7e7e,#030303,#030303,#031029)!important;
+
+}
+
+.dark-mode-back{
+    background-color: black !important;
+}
+
+
+
+
+.user-style-border{
+    border:2px outset gold;
+    box-shadow: 2px 3px 6px #FFE08D,-2px -3px 6px #FFE08D;
+    padding: 8px;
+    border-radius: 20px;
+ }
+ .user-style-border-dark{
+    border:2px outset rgb(219, 0, 0);
+    box-shadow: 2px 3px 6px #ff8d8d,-2px -3px 6px #ff8d8d;
+    padding: 8px;
+    border-radius: 20px;
+ }
+ .dark-sidebar{
+    background-image: linear-gradient(to right,#040410,#060513)!important;
+ }
+ .dark-sidebar .navbar .navbar-nav .nav-link:hover, .dark-sidebar .navbar .navbar-nav .nav-link.active {
+    color: red;
+    background: #ff7878;
+    border-color: darkred;
+}
+.Graph-img{
+    width: 400px;
+}
+@media screen and (max-width: 498px) {
+    .Graph-img{
+        width: 300px;
+    }
+
+    }
+    @media screen and (max-width: 380px) {
+        .Graph-img{
+            width: 200px;
+        }
+    
+        }
+

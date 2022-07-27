@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+    
+    {% block page_css %}
+
+
+    <link href="{% static 'css/empUpdatepage.css' %}" rel="stylesheet" type="text/css">
+
+           
+                    
+    {% endblock %}
+   
+</head>
+<body>
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<div class="container-fluid pt-4 px-4 pb-4 dark-mode-inner-back">
+    <div class="row bg-light justify-content-between rounded p-4 dark-mode-inner2-back">
+        <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0 text-center dark-mode-text">Update Employee Data</h6>
+
+
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+                <form action="" method="POST">
+                    {% csrf_token %}
+
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="emp-id" name="name" value={{id}}
+                            placeholder="Enter Emp ID" disabled>
+                        <label for="floatingInput">Emp ID:</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <input type="date" class="form-control" id="emp-date" name="emp-date"
+                            placeholder="Enter Joining Date" value={{jt}}>
+                        <label for="floatingInput">Joining Date:</label>
+                    </div>
+                    <label class="mb-1 error-msgs " id="date-error">please enter Date</label>
+                    <label class="mb-1 error-msgs " id="date-error2">Date is invalid</label>
+
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="emp-name" name="emp-name" placeholder="Enter Emp Name" value={{nam}}>
+                        <label for="floatingInput">Emp Name:</label>
+                    </div>
+                    <label class="mb-1 error-msgs " id="Name-error">please enter Name</label>
+
+                    <div class="form-floating mb-2">
+                        <input type="number" class="form-control" id="emp-salary" name="emp-salary" value={{sal}}
+                            placeholder="Enter Emp Price">
+                        <label for="floatingInput"> Salary :</label>
+                    </div>
+                    <label class="mb-1 error-msgs " id="salary-error">please enter salary</label>
+                    <label class="mb-1 error-msgs " id="salary-error2">salary should be positive</label>
+
+
+
+                    <div class="form-floating mb-2">
+                        <input type="password" class="form-control" id="emp-password" name="emp-password" value={{pas}}
+                            placeholder="Enter Emp-password">
+                        <label for="floatingInput">Password:</label>
+                    </div>
+                    <label class="mb-1 error-msgs" id="password-error">please enter password</label>
+                    
+                    <div class="form-floating mb-2  row justify-content-evenly">
+
+                        <select name="dutyTime" id="dutyTime" 
+                            class="general-input-field col-sm-4 col-6  list-option" value={{dt}}>
+                            <optgroup label="Shift">
+                                <option>day</option>
+                                <option>night</option>
+                            </optgroup>
+                        </select>
+
+                        <select name="dutyRole" id="dutyRole" class="general-input-field col-sm-4 col-6 list-option">
+                            <optgroup label="Role" value={{rol}}>
+                                <option>worker</option>
+                                <option>cashier</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+
+                    <div class="row mb-3">
+
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="ConfrimCheck1">
+                                <label class="form-check-label dark-mode-text " for="ConfrimCheck1"
+                                    id="ConfrimCheck1-label">
+                                    Confirm Changes
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary gold-color" id="updatedSave">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-5 trigger-hide">
+
+            <img src="{% static 'images/update2.jpg' %}" width="320px" height="250px" class="Stock-img mt-4">
+
+        </div>
+
+
+    </div>
+
+
+
+
+    {% endblock content %}
+    
+  
+</div>
+
+
+{% block page_scripts %}
+
+ <script src="{% static 'js/emp/empupd.js' %}"></script> 
+ <script src="{% static 'js/darkgen.js' %}"></script>  
+                    
+{% endblock %}
+</body>
+</html>

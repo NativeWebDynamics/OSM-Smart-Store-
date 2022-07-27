@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/report.css' %}" rel="stylesheet" type="text/css">
+
+           
+                    
+    {% endblock %}
+</head>
+<body>
+
+
+
+    <div class="container-fluid pt-4 px-4 pb-4 dark-mode-inner-back">
+        <div class="row bg-light justify-content-center rounded p-4 dark-mode-inner2-back">
+            <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0 text-center dark-mode-text">Reports</h6>
+
+
+            </div>
+            <div class="form-group1 col-12 text-sm-end">
+                <label for="sel1 " class="dark-mode-text me-2 ">Select Report Type:</label>
+                <label>
+                    <select class="form-control" id="sel1">
+                        <option value="op-s-report">Select the report</option>
+                        <option value="op-month">Report for Month</option>
+                        <option value="op-date">Report for Month + Date</option>
+
+                    </select>
+                </label>
+            </div>
+            <!-- -------------------------------------------------------- -->
+            <!-- Report for Specific Date -->
+            <div class="col-sm-12 col-xl-6 mt-4 ms-xl-5" id="SP-Date">
+                <h6 class="dark-mode-text">Report for Month + Date</h6>
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+                    
+                    <form method="POST" >
+                        {% csrf_token %}
+
+                        <div class="form-floating mb-2">
+                            <input type="date" class="form-control" id="date-input"
+                            name="date-input"  placeholder="Enter Date">
+                            <label for="floatingInput"> Enter Date: </label>
+
+
+                        </div>
+                        <label class="mb-1 error-msgs " id="date-error">please select Date</label>
+                        <label class="mb-1 error-msgs " id="date-error2">you selected the Future Date</label>
+
+
+
+                        <div></div>
+
+                        <button type="submit" class="btn btn-primary gold-color" id="Submit-sp-date">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- -------------------------------------------------- -->
+             <!-- Report for month -->
+            <div class="col-sm-12 col-xl-6 mt-4 ms-xl-5" id="SP-Month">
+                <h6 class="dark-mode-text"> Report for Month</h6>
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+                
+                    <form  method="POST" action=''   >
+                        {% csrf_token %}
+                        <label class="dark-mode-text mb-2">Which Month Report you want?</label>
+                        <div class="form-floating mb-2">
+                            <input type="number" class="form-control" id="Month-input"
+                            name="Month-input" placeholder="Enter Month in Number">
+                            <label for="floatingInput"> Enter Month: </label>
+
+
+                        </div>
+                        <label class="mb-1 error-msgs " id="Month-error">please enter Month in numeric form</label>
+                        <label class="mb-1 error-msgs " id="Month-error2">Range should be 1-12</label>
+                        
+                        <button    type="submit" class="btn btn-primary gold-color" id="submit-month-report">submit</button>
+
+
+
+                       
+                        
+                         
+                    </form>
+                </div>
+            </div>
+          
+
+
+        </div>
+
+
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
+
+    {% block page_scripts %}
+
+    <script src="{% static 'js/reports/reports.js' %}"></script>  
+    <script src="{% static 'js/darkgen.js' %}"></script>
+                       
+   {% endblock %}
+       
+   </body>
+   </html>
+  
+
+

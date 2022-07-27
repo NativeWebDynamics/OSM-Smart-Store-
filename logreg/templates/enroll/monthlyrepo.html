@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'enroll/base.html' %}
+
+    {% block content %}
+    
+    {% load static %}
+
+
+
+    {% block page_css %}
+
+
+    <link href="{% static 'css/report.css' %}" rel="stylesheet" type="text/css">
+
+           
+                    
+    {% endblock %}
+</head>
+<body>
+
+
+    
+
+
+    <div class="container-fluid1 pt-4 px-4 pb-4 dark-mode-inner-back">
+        <div class="row bg-light justify-content-evenly rounded p-4 dark-mode-inner2-back">
+            <h6 class="dark-mode-text">Monthly Sales</h6>
+            <div class="text-end">
+                <button class="btn dark-mode-text " id="PDF-1">
+                    <img src="{% static 'images/PDF_file_icon.svg.png' %}"
+
+                    
+                        width="35px"></button>
+                        <br>
+                        <label class="pdf-download" for="PDF-1">Download</label> 
+            </div>
+            <div class="col-sm-12 col-xl-5">
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+                    <h6 class=" dark-mode-text mb-2" id="hot-product-heading">Hot Product</h6>
+                    <div class="table-responsive  mb-5 " id="Hot-Product">
+                        <table
+                            class=" table text-start align-middle table-bordered table-hover mb-0 dark-mode-text">
+                            <thead>
+                                <tr class="text-dark  font-size1">
+
+                                    <th scope="col" class="dark-mode-text ">Name</th>
+                                    <th scope="col" class="dark-mode-text">Quantity</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody class="font-size1">
+                                <tr>
+                                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
+                                    <td>{{s4.Product}}</td>
+                                    <td>{{s4.Quantity}}</td>
+
+
+                                    <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-5  ">
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back">
+                    <h6 class=" dark-mode-text mb-2" id="Monthly-sale-heading">Monthly Sale</h6>
+                    <div class="table-responsive  mb-5" id="Monthly-sale">
+                        <table
+                            class="table text-start  align-middle table-bordered table-hover mb-0 dark-mode-text">
+                            <thead>
+                                <tr class="text-dark  font-size1">
+
+                                    <th scope="col" class="dark-mode-text ">Month</th>
+                                    <th scope="col" class="dark-mode-text">Sales</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody class="font-size1">
+
+                                {% for key, value in s1.items %}
+                                <tr>
+                                    <td>  {{ key }} </td> 
+                                    <td>  {{ value }} </td>
+                                    
+                                </tr>
+                                {% endfor %}
+                               
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+           
+
+        </div>
+
+
+
+
+    </div>
+    <!-- Sales according to Quantity -->
+    <div class="container-fluid1 pt-4 px-4 pb-4 dark-mode-inner-back">
+        <div class="row bg-light justify-content-evenly rounded p-4 dark-mode-inner2-back">
+         
+            <div class="col-sm-12 col-xl-5">
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back ">
+                    <h6 class=" dark-mode-text mb-2" id="heading-table2" >Sales according to Quantity</h6>
+                    <div class="table-responsive  mb-5" id="SalesAccQuantity">
+                        <table
+                            class=" table text-start align-middle table-bordered table-hover mb-0 dark-mode-text" 
+                           >
+                            <thead>
+                                <tr class="text-dark  font-size1">
+
+                                    <th scope="col" class="dark-mode-text ">product</th>
+                                    <th scope="col" class="dark-mode-text">Quantity</th>
+                                    <th scope="col" class="dark-mode-text">sales</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="font-size1">
+                                <tr>
+                                    {% for col in s2.columns %}
+                                      <td>
+                                        {{col}}
+                                      </td>
+                                    {% endfor %}
+                                  </tr>
+                                    {% for index, row in s2.iterrows %}
+                                      <tr>
+                                        {% for cell in row %}
+                                          <td>
+                                            {{cell}}
+                                          </td>
+                                        {% endfor %}
+                                      </tr>
+                                    {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <!-- sales according to City -->
+    <div class="container-fluid1 pt-4 px-4 pb-4 dark-mode-inner-back">
+        <div class="row bg-light justify-content-evenly rounded p-4 dark-mode-inner2-back">
+       
+            <div class="col-sm-12 col-xl-5">
+                <div class="bg-light rounded h-100 p-4 dark-mode-inner2-back ">
+                    <h6 class=" dark-mode-text mb-2" id="CityHeading">Sales according to City</h6>
+                    <div class="table-responsive  mb-5" id="CityTable">
+                        <table
+                            class=" table text-start align-middle table-bordered table-hover mb-0 dark-mode-text">
+                            <thead>
+                                <tr class="text-dark  font-size1">
+
+                                    <th scope="col" class="dark-mode-text ">City</th>
+                                    <th scope="col" class="dark-mode-text">Product</th>
+                                    <th scope="col" class="dark-mode-text">Quantity</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="font-size1">
+                                <tr>
+                                    {% for col in s3.columns %}
+                                      <td>
+                                        {{col}}
+                                      </td>
+                                    {% endfor %}
+                                  </tr>
+                                    {% for index, row in s3.iterrows %}
+                                      <tr>
+                                        {% for cell in row %}
+                                          <td>
+                                            {{cell}}
+                                          </td>
+                                        {% endfor %}
+                                      </tr>
+                                    {% endfor %}
+                                
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                  
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    
+
+    {% endblock %}
+
+    {% block page_scripts %}
+
+    <script src="{% static 'js/reports/MonthReports.js' %}"></script>  
+    <script src="{% static 'js/darkgen.js' %}"></script> 
+                       
+   {% endblock %}
+       
+   </body>
+   </html>
+  
+
+
